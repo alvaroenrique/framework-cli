@@ -11,5 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaroenrique/framework-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alvaroenrique/framework-cli/issues"
+  },
+  "homepage": "https://github.com/alvaroenrique/framework-cli#readme"
 }
