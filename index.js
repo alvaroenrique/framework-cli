@@ -31,5 +31,9 @@ inquier
       const init = require("./commands/build-proyect");
       console.log("Compilando el proyecto");
       init();
+    } else if (answers.action === "Iniciar APM") {
+      const init = require("./commands/run-apm");
+      console.log("Generando reporte de rendimiento");
+      init();
     }
   });
