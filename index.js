@@ -29,6 +29,7 @@ inquier
       init();
     } else if (answers.action === "Compilar proyecto") {
       const init = require("./commands/build-proyect");
+      console.log("Compilando el proyecto");
       init();
     }
   });
