@@ -23,6 +23,8 @@ inquier
       const init = require("./commands/init-proyect");
       init();
     } else if (answers.action === "Iniciar entorno de desarrollo") {
+      console.log(`Puerto: 3000`);
+      console.log("http://localhost:3000/");
       const init = require("./commands/init-development-mode");
       init();
     } else if (answers.action === "Compilar proyecto") {
