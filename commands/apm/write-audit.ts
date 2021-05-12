@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const genReport = async (url: string, tittle?: string) => {
-  const chrome = await launch({ chromeFlags: ["--headless"] });
+  const chrome = await launch({ chromeFlags: ["--headless", "--no-sandbox"] });
   const options = {
     logLevel: "info",
     output: "json",
