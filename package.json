@@ -12,12 +12,21 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "report": "ts-node commands/apm/index.ts"
   },
   "author": "Alvaro Huamani",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^8.0.0"
+    "@supabase/supabase-js": "^1.11.9",
+    "chrome-launcher": "^0.13.4",
+    "dotenv": "^9.0.2",
+    "inquirer": "^8.0.0",
+    "lighthouse": "^7.4.0",
+    "node-cron": "^3.0.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "uuid": "^8.3.2"
   },
   "repository": {
     "type": "git",
