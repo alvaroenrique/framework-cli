@@ -30,7 +30,10 @@ dotenv.config();
 // task2.start();
 
 (async () => {
+  let auditNumer = 1;
   while (true) {
     await writeAudit(process.env.SITE_URL);
+    console.log(`Nro Auditoria: ${auditNumer}`);
+    auditNumer = auditNumer + 1;
   }
 })();
