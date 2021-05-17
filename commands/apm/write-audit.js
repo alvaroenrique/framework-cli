@@ -1,12 +1,12 @@
-import lighthouse from "lighthouse";
-import { launch } from "chrome-launcher";
-import { v4 as uuidv4 } from "uuid";
-import { createClient } from "@supabase/supabase-js";
-import dotenv from "dotenv";
+const lighthouse = require("lighthouse");
+const { launch } = require("chrome-launcher");
+const { v4: uuidv4 } = require("uuid");
+const { createClient } = require("@supabase/supabase-js");
+const { config } = require("dotenv");
 
-dotenv.config();
+config();
 
-const genReport = async (url: string, tittle?: string) => {
+const genReport = async (url, tittle) => {
   const chrome = await launch({ chromeFlags: ["--headless", "--no-sandbox"] });
   const options = {
     logLevel: "info",
@@ -28,7 +28,7 @@ const genReport = async (url: string, tittle?: string) => {
   };
 };
 
-const writeAudit = async (url: string, tittle?: string) => {
+const writeAudit = async (url, tittle) => {
   const newAudit = await genReport(url, tittle);
 
   const databaseAPI = createClient(process.env.API_URL, process.env.API_KEY);
@@ -37,4 +37,4 @@ const writeAudit = async (url: string, tittle?: string) => {
   console.log("Aditoria generada \n", data);
 };
 
-export default writeAudit;
+module.exports = writeAudit;

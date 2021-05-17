@@ -1,8 +1,8 @@
-import { schedule } from "node-cron";
-import writeAudit from "./write-audit";
-import dotenv from "dotenv";
+const { schedule } = require("node-cron");
+const writeAudit = require("./write-audit");
+const { config } = require("dotenv");
 
-dotenv.config();
+config();
 
 const task = schedule(
   "* * * * *",
@@ -13,7 +13,7 @@ const task = schedule(
   { scheduled: false }
 );
 
-export default task.start;
+module.exports = task.start;
 
 // (async () => {
 //   let auditNumer = 1;

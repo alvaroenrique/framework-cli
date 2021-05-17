@@ -1,7 +1,7 @@
-import cproc from "child_process";
+const { spawn } = require("child_process");
 
-export default () => {
-  const proc = cproc.spawn("git", [
+module.exports = () => {
+  const proc = spawn("git", [
     "clone",
     "https://github.com/alvaroenrique/framework-boilerplate.git",
   ]);

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import inquier from "inquirer";
+const inquier = require("inquirer");
 
-import initProject from "./commands/init-proyect";
-import initDevelopmentMode from "./commands/init-development-mode";
-import buildProject from "./commands/build-project";
-import runApm from "./commands/apm/index";
+const initProject = require("./commands/init-proyect");
+const initDevelopmentMode = require("./commands/init-development-mode");
+const buildProject = require("./commands/build-project");
+const runApm = require("./commands/apm/index");
 
 inquier
   .prompt([

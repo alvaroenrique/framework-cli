@@ -1,7 +1,7 @@
-import cproc from "child_process";
+const { spawn } = require("child_process");
 
-export default () => {
-  const proc = cproc.spawn("npm", ["run", "dev"]);
+module.exports = () => {
+  const proc = spawn("npm", ["run", "dev"]);
 
   proc.stdout.on("data", function (data) {
     console.log(`${data}`);
