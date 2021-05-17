@@ -1,6 +1,6 @@
 {
   "name": "performance-framework-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "keywords": [
     "CLI",
@@ -12,7 +12,7 @@
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "ts-node index.ts",
     "report": "ts-node commands/apm/index.ts"
   },
   "author": "Alvaro Huamani",

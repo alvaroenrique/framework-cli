@@ -1,5 +1,10 @@
 #!/usr/bin/env node
-const inquier = require("inquirer");
+import inquier from "inquirer";
+
+import initProject from "./commands/init-proyect";
+import initDevelopmentMode from "./commands/init-development-mode";
+import buildProject from "./commands/build-project";
+import runApm from "./commands/apm/index";
 
 inquier
   .prompt([
@@ -20,20 +25,13 @@ inquier
   .then((answers) => {
     console.log(answers);
     if (answers.action === "Iniciar proyecto") {
-      const init = require("./commands/init-proyect");
-      init();
+      initProject();
     } else if (answers.action === "Iniciar entorno de desarrollo") {
-      console.log(`Puerto: 3000`);
-      console.log("http://localhost:3000/");
-      const init = require("./commands/init-development-mode");
-      init();
+      initDevelopmentMode();
     } else if (answers.action === "Compilar proyecto") {
-      const init = require("./commands/build-proyect");
-      console.log("Compilando el proyecto");
-      init();
+      buildProject();
     } else if (answers.action === "Iniciar APM") {
-      const init = require("./commands/run-apm");
-      console.log("Generando reporte de rendimiento");
-      init();
+      console.log("\n\nPreparando auditoría ...\n\n");
+      runApm();
     }
   });

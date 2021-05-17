@@ -4,36 +4,22 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// const task = schedule(
-//   "* * * * *",
-//   () => {
-//     writeAudit(
-//       "https://nextjs-cra.goldenshun.vercel.app/",
-//       "http://localhost:3002/"
-//     );
-//   },
-//   { scheduled: false }
-// );
-
-// const task2 = schedule(
-//   "* * * * *",
-//   () => {
-//     writeAudit(
-//       "https://nextjs-cra.goldenshun.vercel.app/nextjs",
-//       "http://localhost:3002/server-side-rendering"
-//     );
-//   },
-//   { scheduled: false }
-// );
-
-// task.start();
-// task2.start();
-
-(async () => {
-  let auditNumer = 1;
-  while (true) {
+const task = schedule(
+  "* * * * *",
+  async () => {
     await writeAudit(process.env.SITE_URL);
-    console.log(`Nro Auditoria: ${auditNumer}`);
-    auditNumer = auditNumer + 1;
-  }
-})();
+    console.log("\n\nPreparando auditoría ...\n\n");
+  },
+  { scheduled: false }
+);
+
+export default task.start;
+
+// (async () => {
+//   let auditNumer = 1;
+//   while (true) {
+//     await writeAudit(process.env.SITE_URL);
+//     console.log(`Nro Auditoria: ${auditNumer}`);
+//     auditNumer = auditNumer + 1;
+//   }
+// })();
